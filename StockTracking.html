@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>
+Login page
+</title>
+</head>
+<body>
+<h1 style="font-family:'Times New Roman', Times, serif;text-align="center";font: size 20pt;
+color:#00FF00;>
+Stock Tracking System Login Page
+</h1>
+<form name="login">
+Username<input type="text" name="userid"/>
+Password<input type="password" name="pswrd"/>
+<input type="button" onclick="check(this.form)" value="Login"/>
+<input type="reset" value="Clear"/>
+</form>
+<script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ /*Search User Name from DB table, get the Record, then check Password*/
+ if(form.userid.value == "John" && form.pswrd.value == "555888")
+  {
+    window.open('AccountInfo.html')/*opens the target page while Id & password matches*/
+  }
+ else
+ {
+   alert("Error Password or Username. Please click OK to register first")/*displays error message*/
+   window.open('Register.html')/*opens the resgister page*/
+  }
+}
+</script>
+</body>
+</html>

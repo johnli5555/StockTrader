@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>
+Register page
+</title>
+</head>
+<body>
+<h1 style="font-family:Comic Sans Ms;text-align="center";font-size:20pt;
+color:#00FF00;>
+Stock Tracking System Register Page
+</h1>
+<form name="Register">
+Username<input type="text" name="userid"/>
+Password<input type="password" name="pswrd"/>
+<input type="button" onclick="validate(this.form)" value="Register"/>
+<input type="reset" value="Reset"/>
+</form>
+<script language="javascript">
+function validate(form)/*function to validate userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are OKay*/
+ /*First Search User Name from profile table, get the Record, then display error: userid has already been taken*/
+ 
+ /*then Check if the Password meets security requirements*/
+
+ /*check password length*/
+ var myPassword = form.pswrd.value;
+ var myUserid = form.userid.value;
+ var passwordCheck=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+ /*userid should check DB table, ensure userid is unique*/
+ if(myUserid.length < 5 ) 
+ {
+   alert("your userid must great than 5 characters")
+ }
+
+ else
+  /*password validation*/
+ if(myPassword.match(passwordCheck))
+ {
+  alert("You are successfully registered! Please log in and start to invest")/*displays successful message*/
+  window.open('AddMoney.html') 
+}
+ else
+ {
+  alert("Your password must between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character")/*displays error message*/
+ }
+}
+</script>
+</body>
+</html>

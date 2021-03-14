@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML = 
+                    document.getElementById("user_input").value;
+                    /*add the balance in your account in Data base*/
+    }
+
+    function Balance() {
+        window.open('Table.html')
+    }
+  </script>
+  </head>
+<body>
+
+  <form>
+    <label><b>add balance to your wallet</b></label>
+    <input type="text" name="message" id="user_input">
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>The current balance in your wallet: </label>
+  <p><span id='display'></span></p>
+
+  Great!Your money is added to your account! <br/>
+  <br/>
+  <input type="button" onclick="Balance();" value="Check Balance"/><br/><br/>
+  
+  Now you can buy stocks! search stock rates?<br/>
+  <br/>
+  <input type="button" value="Google" onclick="window.open('http://www.google.com/finance')" /><br/>
+</body>
+</html>

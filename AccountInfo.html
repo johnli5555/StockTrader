@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>     
+        </head>
+        <body>
+            <textarea id="display" style="width:1000px;height:1000px"></textarea>
+            <script>
+                var parsed = "";
+                var myObject = [{
+                    AccountNo: "999888555",
+                    firstname: "Jon",
+                    lastname: "Smith",
+                    email: "jsmith@email.com",
+                    Balance: "$159,000.00"
+                }, {
+                    StockName: "Apple",
+                    Price: "$ 129.99",
+                    Quantity: "500"
+                }, {
+                    StockName: "Google",
+                    Price: "$ 2129.99",
+                    Quantity: "999"  
+                }, {
+                    StockName: "Tesla",
+                    Price: "$ 1129.99",
+                    Quantity: "899"
+                }];
+                for (i = 0; i< myObject.length; i++) {
+                    var myobj=  myObject[i];
+                    for (var property in myobj) {
+                        parsed += property + ": " + myobj[property] + "\n";          
+                    }
+                }                           
+                $("#display").val(parsed);            
+            </script>
+        </body>
+    </html>
